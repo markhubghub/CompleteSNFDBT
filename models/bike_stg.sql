@@ -14,7 +14,7 @@ with
             end_lng,
             member_casual
         from {{ source("demo", "BIKE") }}
-        where ride_id <> '"bikeid"'
+        where ride_id <> '"bikeid"' and started_at <> '"starttime"' and started_at <> 'starttime'
     )
 
 select *

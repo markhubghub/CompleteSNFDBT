@@ -7,7 +7,8 @@ with
             start_lat as station_lat,
             start_lng as station_long
 
-        from {{ source("demo", "BIKE") }}
+        -- from {{ source("demo", "BIKE") }}
+        from {{ ref('bike_stg') }}
         where ride_id <> 'ride_id'
         -- limit 10
 
