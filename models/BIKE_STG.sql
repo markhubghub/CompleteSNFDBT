@@ -1,0 +1,21 @@
+with
+    BIKE as (
+        select
+            ride_id,
+            replace(started_at,'"','') as STARTED_AT,
+            replace(ended_at,'"','') as ENDED_AT,
+            start_station_name,
+            start_statio_id,
+            end_station_name,
+            end_station_id,
+            start_lat,
+            start_lng,
+            end_lat,
+            end_lng,
+            member_casual
+        from {{ source("demo", "BIKE") }}
+        where ride_id <> '"bikeid"'
+    )
+
+select *
+from bike
