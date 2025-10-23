@@ -14,7 +14,7 @@ with
             end_station_id as trip_station_end_id,
             member_casual,
         --from {{ source("demo", "BIKE") }}
-        from {{ ref("BIKE_STG")}}
+        from {{ ref("bike_stg")}}
         where ride_id <> 'ride_id'
         limit 10
 

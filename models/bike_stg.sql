@@ -1,9 +1,9 @@
 with
-    BIKE as (
+    bike as (
         select
             ride_id,
-            replace(started_at,'"','') as STARTED_AT,
-            replace(ended_at,'"','') as ENDED_AT,
+            replace(started_at, '"', '') as started_at,
+            replace(ended_at, '"', '') as ended_at,
             start_station_name,
             start_statio_id,
             end_station_name,
